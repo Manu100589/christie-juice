@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, Leaf, Sparkles, Award } from 'lucide-react';
-import bannerImg from '../assets/banner.png'; // Widescreen banner
+import heroFamilyImg from '../assets/hero_family.jpg'; // Family lifestyle image
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -158,11 +158,11 @@ export default function HeroSection() {
           <div className="parallax-glow absolute w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] rounded-full bg-gradient-to-tr from-brand-sky to-brand-green/30 opacity-40 blur-[80px] z-0 animate-pulse-slow pointer-events-none" />
 
           {/* Main Visual Frame (The Brand Banner) */}
-          <div className="parallax-item-1 relative z-10 w-full max-w-[540px] aspect-[1.7] rounded-3xl overflow-hidden shadow-2xl shadow-brand-blue/15 border border-brand-white/80 group">
+          <div className="parallax-item-1 relative z-10 w-full max-w-[540px] aspect-[1024/763] rounded-3xl overflow-hidden shadow-2xl shadow-brand-blue/15 border border-brand-white/80 group">
             <img
-              src={bannerImg}
-              alt="Christie Naturals Premium Beverage Range"
-              className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out"
+              src={heroFamilyImg}
+              alt="Famille dégustant les jus Christie Naturals"
+              className="w-full h-full object-cover transform transition-transform duration-1000 ease-out group-hover:scale-103"
             />
             {/* Glossy Overlay frame */}
             <div className="absolute inset-0 bg-gradient-to-t from-brand-text/10 via-transparent to-brand-white/10 pointer-events-none" />
