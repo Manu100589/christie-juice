@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Leaf, Shield, Award, Sparkles, Sun, Eye } from 'lucide-react';
+import { Leaf, Shield, Award, Sparkles, Sun, Heart } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,39 +53,39 @@ export default function BenefitsSection() {
 
   const benefits = [
     {
-      title: '100% naturel',
-      desc: 'Des recettes inspirées du goût authentique des fruits et des ingrédients soigneusement sélectionnés.',
-      icon: <Leaf size={22} className="text-brand-green" />,
+      title: 'Défenses immunitaires',
+      desc: 'Une teneur exceptionnelle en Vitamine C naturelle issue du Baobab et de l’Ananas pour stimuler activement vos défenses.',
+      icon: <Shield size={22} className="text-brand-green" />,
       bg: 'bg-brand-green/5'
     },
     {
-      title: 'Sans conservateurs',
-      desc: 'Une approche saine et intègre qui privilégie la simplicité, la fraîcheur et la pureté absolue.',
-      icon: <Shield size={22} className="text-brand-blue" />,
+      title: 'Confort digestif',
+      desc: 'Des fibres solubles douces de baobab et de la bromélaïne active pour apaiser l’estomac et nourrir votre flore intestinale.',
+      icon: <Leaf size={22} className="text-brand-blue" />,
       bg: 'bg-brand-blue/5'
     },
     {
-      title: 'Riche en vitamines',
-      desc: 'Des boissons d’origine tropicale pensées pour conjuguer plaisir immédiat et vitalité naturelle.',
-      icon: <Sparkles size={22} className="text-pineapple" />,
-      bg: 'bg-pineapple/5'
-    },
-    {
-      title: 'Saveurs authentiques',
-      desc: 'Des profils gustatifs intenses, fidèles à l’identité originelle de chaque fruit et plante tropicale.',
-      icon: <Award size={22} className="text-hibiscus" />,
+      title: 'Santé cardiovasculaire',
+      desc: 'Les anthocyanes et polyphénols du Bissap aident à protéger les vaisseaux et soutenir une bonne circulation sanguine.',
+      icon: <Heart size={22} className="text-hibiscus" />,
       bg: 'bg-hibiscus/5'
     },
     {
-      title: 'Fraîcheur tropicale',
-      desc: 'Une expérience gustative intensément rafraîchissante, ensoleillée et désaltérante.',
+      title: 'Zéro sucre ajouté',
+      desc: 'Uniquement les sucres naturels du fruit pour garantir une libération d’énergie stable, sans pic d’insuline.',
+      icon: <Award size={22} className="text-pineapple" />,
+      bg: 'bg-pineapple/5'
+    },
+    {
+      title: 'Pouvoir détoxifiant',
+      desc: 'Des propriétés diurétiques et drainantes naturelles qui soutiennent le travail d’élimination du foie et des reins.',
       icon: <Sun size={22} className="text-brand-green-dark" />,
       bg: 'bg-brand-green-dark/5'
     },
     {
-      title: 'Image de marque premium',
-      desc: 'Un produit élégant en bouteille de verre qui valorise autant l’excellence du goût que la qualité perçue.',
-      icon: <Eye size={22} className="text-brand-text" />,
+      title: 'Hydratation active',
+      desc: 'Des boissons naturellement riches en électrolytes (potassium, calcium) pour une régénération profonde.',
+      icon: <Sparkles size={22} className="text-brand-text" />,
       bg: 'bg-brand-text/5'
     }
   ];

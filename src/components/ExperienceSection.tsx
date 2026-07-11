@@ -112,13 +112,13 @@ export default function ExperienceSection() {
         </span>
         
         <h2 className="story-header-el font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-text leading-tight max-w-4xl mx-auto">
-          Une expérience fruitée, vivante et profondément rafraîchissante
+          Prendre soin de soi n'a jamais eu aussi bon goût
         </h2>
         
         <div className="story-header-el w-20 h-[3px] bg-brand-green-dark mx-auto rounded-full" />
         
         <p className="story-header-el text-brand-text/80 text-lg sm:text-xl lg:text-2xl font-light leading-relaxed max-w-3xl mx-auto font-serif italic">
-          "Chaque bouteille CHRISTIE NATURALS est pensée comme une rencontre entre la fraîcheur, la naturalité et le plaisir. Des saveurs lumineuses, une identité visuelle forte, une sensation de pureté et une promesse simple : offrir le goût de la nature dans une forme moderne, généreuse et désirable."
+          "Nous avons réconcilié la recherche de la santé et l'exigence du plaisir. Chaque bouteille CHRISTIE NATURALS est une promesse d'équilibre : une hydratation vivante, des nutriments hautement assimilables, et une sensation immédiate de bien-être physique et mental."
         </p>
 
         <div className="story-header-el pt-8">

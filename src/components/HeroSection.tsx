@@ -104,23 +104,23 @@ export default function HeroSection() {
 
           {/* Main Title */}
           <h1 className="hero-title font-serif text-4xl sm:text-5xl xl:text-6xl font-bold text-brand-text leading-[1.1] tracking-tight">
-            Le goût de la nature,<br />
+            La vitalité pure de la nature,<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green-dark via-brand-green to-brand-blue">
-              dans toute sa fraîcheur
+              le plaisir en plus
             </span>
           </h1>
 
           {/* Subtitle description */}
           <p className="hero-desc text-brand-muted text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-            Découvrez une collection de jus authentiques et rafraîchissants, élaborés pour révéler le meilleur du baobab, de l’ananas et du bissap. Une expérience fruitée, naturelle et généreuse, pensée pour celles et ceux qui recherchent la fraîcheur, la qualité et le vrai goût.
+            Découvrez des jus tropicaux premium formulés comme de véritables élixirs de bien-être. Riches en antioxydants, vitamines essentielles et fibres prébiotiques, nos recettes de baobab, d’ananas et de bissap soutiennent votre immunité, votre digestion et votre énergie au quotidien. Zéro sucre ajouté, zéro conservateur.
           </p>
 
           {/* Trust Badges */}
           <div ref={badgeContainerRef} className="flex flex-wrap gap-3 py-2">
             {[
-              { text: '100% naturel', icon: <Leaf size={14} className="text-brand-green" /> },
-              { text: 'Sans conservateurs', icon: <Award size={14} className="text-brand-blue" /> },
-              { text: 'Riche en vitamines', icon: <Sparkles size={14} className="text-pineapple" /> },
+              { text: 'Énergie 100% Naturelle', icon: <Sparkles size={14} className="text-pineapple" /> },
+              { text: 'Riche en Vitamines & Minéraux', icon: <Leaf size={14} className="text-brand-green" /> },
+              { text: 'Soutien Digestion & Immunité', icon: <Award size={14} className="text-brand-blue" /> },
             ].map((badge, idx) => (
               <span
                 key={idx}

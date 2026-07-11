@@ -100,14 +100,14 @@ export default function BrandStorySection() {
               Notre Philosophie
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-text leading-tight">
-              Une marque inspirée par la nature, pensée pour le plaisir
+              Quand la haute gastronomie rencontre la nutrition fonctionnelle
             </h2>
             <div className="w-16 h-[3px] bg-brand-green rounded-full" />
             <p className="text-brand-muted text-base leading-relaxed">
-              Chez <strong className="text-brand-text font-medium">CHRISTIE NATURALS</strong>, nous croyons que les meilleurs jus sont ceux qui respectent l’essentiel : la pureté du goût, la qualité des ingrédients et la fraîcheur de chaque recette.
+              Chez <strong className="text-brand-text font-medium">CHRISTIE NATURALS</strong>, nous croyons qu'une boisson d'exception doit nourrir votre corps autant qu'elle émerveille vos papilles. Notre démarche scientifique et artisanale consiste à extraire le meilleur des terroirs tropicaux pour créer des jus vivants, gorgés de nutriments actifs.
             </p>
             <p className="text-brand-muted text-base leading-relaxed">
-              Notre ambition est simple : proposer des boissons naturelles qui allient authenticité, plaisir et élégance, en mettant à l’honneur des saveurs emblématiques comme le baobab, l’ananas et le bissap.
+              Nous sélectionnons des super-aliments d'exception — le baobab revitalisant, l'ananas enzymatique et l'hibiscus antioxydant — pour composer des recettes bienfaisantes qui accompagnent votre quête d'un mode de vie sain, équilibré et vigoureux.
             </p>
           </div>
 

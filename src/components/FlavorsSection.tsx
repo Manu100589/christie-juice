@@ -55,43 +55,46 @@ export default function FlavorsSection() {
       id: 'baobab',
       name: 'Jus de Baobab',
       shortName: 'Baobab',
-      desc: 'Une recette douce et onctueuse qui révèle toute la richesse naturelle du baobab. Une saveur généreuse, réconfortante et subtilement exotique.',
-      tags: ['Naturel', 'Onctueux', 'Authentique'],
+      desc: 'Une texture douce et veloutée d’un super-aliment légendaire. Le baobab est naturellement gorgé de Vitamine C (6 fois plus qu\'une orange) pour stimuler vos défenses immunitaires et de fibres solubles prébiotiques pour nourrir votre microbiote intestinal.',
+      tags: ['Immunité', 'Prébiotique', 'Anti-fatigue'],
       img: baobabImg,
       color: '#D8B08D', // Sable Baobab
       gradient: 'from-[#FAF6F2] to-[#EADBC8]',
       textColor: 'text-[#8A6642]',
       tagBg: 'bg-[#D8B08D]/20 text-[#8A6642]',
       glowColor: 'shadow-[#D8B08D]/30',
-      radialGlow: 'rgba(216, 176, 141, 0.25)'
+      radialGlow: 'rgba(216, 176, 141, 0.25)',
+      footerText: 'Super-fruit Protecteur'
     },
     {
       id: 'pineapple',
       name: 'Jus d’Ananas',
       shortName: 'Ananas',
-      desc: 'Une fraîcheur fruitée, lumineuse et intensément désaltérante. Le jus d’ananas CHRISTIE NATURALS célèbre l’énergie du soleil et le plaisir des saveurs tropicales.',
-      tags: ['Tropical', 'Frais', 'Vitaminé'],
+      desc: 'Une fraîcheur solaire intensément revitalisante. Pressé à froid, notre jus d\'ananas préserve la bromélaïne, une enzyme naturelle aux propriétés anti-inflammatoires et digestives qui aide à l\'assimilation des protéines.',
+      tags: ['Digestion', 'Anti-inflammatoire', 'Manganèse'],
       img: pineappleImg,
       color: '#F6C230', // Pineapple Gold
       gradient: 'from-[#FFFDEB] to-[#FDF0A6]',
       textColor: 'text-[#B08300]',
       tagBg: 'bg-[#F6C230]/20 text-[#B08300]',
       glowColor: 'shadow-[#F6C230]/30',
-      radialGlow: 'rgba(246, 194, 48, 0.25)'
+      radialGlow: 'rgba(246, 194, 48, 0.25)',
+      footerText: 'Bromélaïne Active'
     },
     {
       id: 'bissap',
       name: 'Jus de Bissap',
       shortName: 'Bissap',
-      desc: 'Une boisson vibrante au caractère floral et raffiné, pensée pour offrir une dégustation à la fois intense, élégante et rafraîchissante.',
-      tags: ['Floral', 'Intense', 'Élégant'],
+      desc: 'Une infusion florale vibrante aux vertus millénaires. Notre bissap est riche en anthocyanes et polyphénols, des antioxydants puissants reconnus pour aider à réguler la tension artérielle et purifier l\'organisme.',
+      tags: ['Antioxydant', 'Tension Protect', 'Détox'],
       img: bissapImg,
       color: '#C93A6D', // Hibiscus Pink
       gradient: 'from-[#FFF0F5] to-[#FCD5E4]',
       textColor: 'text-[#961C4C]',
       tagBg: 'bg-[#C93A6D]/20 text-[#961C4C]',
       glowColor: 'shadow-[#C93A6D]/30',
-      radialGlow: 'rgba(201, 58, 109, 0.25)'
+      radialGlow: 'rgba(201, 58, 109, 0.25)',
+      footerText: 'Bouclier Antioxydant'
     }
   ];
 
@@ -117,7 +120,7 @@ export default function FlavorsSection() {
           </h2>
           <div className="w-16 h-[3px] bg-brand-green rounded-full mb-6" />
           <p className="text-brand-muted text-base sm:text-lg">
-            Trois expressions du goût, trois expériences sensorielles, une même promesse : la fraîcheur naturelle signée CHRISTIE NATURALS.
+            Trois élixirs de vitalité formulés à partir des plus puissants super-aliments tropicaux pour régénérer votre corps au quotidien.
           </p>
         </div>
 
@@ -174,7 +177,7 @@ export default function FlavorsSection() {
               {/* Card Footer: Action Button */}
               <div className="relative z-10 pt-4 border-t border-brand-text/5 flex justify-between items-center">
                 <span className={`text-xs font-bold uppercase tracking-[0.2em] ${flavor.textColor}`}>
-                  Savourez l'exotisme
+                  {flavor.footerText}
                 </span>
                 <a
                   href="#contact"
