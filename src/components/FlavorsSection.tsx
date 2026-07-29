@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
-import baobabImg from '../assets/img_37.jpg'; // Baobab bottle asset (Image 1)
-import pineappleImg from '../assets/img_41.jpg'; // Pineapple bottle asset (Image 2)
-import bissapImg from '../assets/img_43.jpg'; // Bissap bottle asset (Image 3)
+import baobabImg from '../assets/img_baobab_nobg.png'; // Baobab bottle asset (Image 1 - White Bg)
+import pineappleImg from '../assets/img_pineapple_nobg.png'; // Pineapple bottle asset (Image 2 - White Bg)
+import bissapImg from '../assets/img_bissap_nobg.png'; // Bissap bottle asset (Image 3 - White Bg)
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,9 +129,8 @@ export default function FlavorsSection() {
           {flavors.map((flavor) => (
             <div
               key={flavor.id}
-              className="flavor-card group relative rounded-[36px] p-6 lg:p-8 bg-gradient-to-b border border-brand-sky/20 transition-all duration-700 hover:shadow-2xl flex flex-col justify-between overflow-hidden shadow-xl"
+              className="flavor-card group relative rounded-[36px] p-6 lg:p-8 bg-white border border-brand-sky/20 transition-all duration-700 hover:shadow-2xl flex flex-col justify-between overflow-hidden shadow-xl"
               style={{
-                background: `linear-gradient(180deg, ${flavor.gradient.split(' ')[0].slice(6,-1)} 0%, ${flavor.gradient.split(' ')[1].slice(4,-1)} 100%)`,
                 boxShadow: `0 20px 40px -15px ${flavor.radialGlow}`
               }}
             >
