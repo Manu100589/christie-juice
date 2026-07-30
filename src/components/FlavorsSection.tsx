@@ -180,7 +180,7 @@ export default function FlavorsSection() {
                 </span>
                 <a
                   href="#contact"
-                  className={`w-10 h-10 rounded-full bg-brand-white flex items-center justify-center shadow-md shadow-brand-text/5 text-brand-text group-hover:bg-brand-text group-hover:text-brand-white transition-all duration-300`}
+                  className={`magnetic-btn premium-btn premium-btn-white w-10 h-10 rounded-full bg-brand-white flex items-center justify-center shadow-md shadow-brand-text/5 text-brand-text group-hover:bg-brand-text group-hover:text-brand-white transition-all duration-300`}
                 >
                   <ArrowRight size={18} />
                 </a>

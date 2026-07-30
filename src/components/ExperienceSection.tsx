@@ -124,7 +124,7 @@ export default function ExperienceSection() {
         <div className="story-header-el pt-8">
           <a
             href="#contact"
-            className="px-8 py-4 rounded-full bg-brand-text hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-xs shadow-lg transition-all duration-300 inline-flex items-center gap-2"
+            className="magnetic-btn premium-btn premium-btn-dark px-8 py-4 rounded-full bg-brand-text hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-xs inline-flex items-center gap-2"
           >
             Partager l'expérience
             <Droplets size={14} />

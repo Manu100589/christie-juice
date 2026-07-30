@@ -54,17 +54,17 @@ body {
 
 /* Custom utility for glassmorphism */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .glass-panel-dark {
-  background: rgba(28, 36, 48, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(28, 36, 48, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Gradient background utility */
@@ -76,7 +76,7 @@ body {
   background: radial-gradient(circle at 50% 50%, rgba(72, 199, 243, 0.15) 0%, rgba(167, 235, 255, 0.05) 50%, transparent 100%);
 }
 
-/* Hide default Scrollbar but maintain scrollable behavior if needed, or style it beautifully */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -89,4 +89,107 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #1E7A34;
+}
+
+/* ==========================================================================
+   PREMIUM LUXURY DESIGN UTILITIES (Apple, Porsche, Awwwards style)
+   ========================================================================== */
+
+/* 1. Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #48C7F3, #2F9D45, #F6C230, #C93A6D);
+  width: 0%;
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.08s ease-out;
+}
+
+/* 2. Premium Image Hover Interaction */
+.premium-img-container {
+  overflow: hidden;
+  position: relative;
+  border-radius: 1.5rem;
+}
+
+.premium-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  will-change: transform, filter;
+}
+
+.premium-img-container:hover .premium-img {
+  transform: scale(1.03);
+  filter: contrast(1.06) saturate(1.03);
+}
+
+/* 3. Luxury Buttons Hover & Micro-Interactions */
+.premium-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease !important;
+  will-change: transform, box-shadow;
+  transform: translate3d(0, 0, 0);
+}
+
+.premium-btn:hover {
+  transform: scale(1.04) translateY(-1px) translate3d(0, 0, 0);
+}
+
+.premium-btn:active {
+  transform: scale(0.98) translateY(0) translate3d(0, 0, 0);
+}
+
+/* Specific glows per color code */
+.premium-btn-green:hover {
+  box-shadow: 0 12px 24px -6px rgba(47, 157, 69, 0.35);
+}
+
+.premium-btn-blue:hover {
+  box-shadow: 0 12px 24px -6px rgba(72, 199, 243, 0.35);
+}
+
+.premium-btn-hibiscus:hover {
+  box-shadow: 0 12px 24px -6px rgba(201, 58, 109, 0.35);
+}
+
+.premium-btn-white:hover {
+  box-shadow: 0 12px 24px -6px rgba(28, 36, 48, 0.12);
+}
+
+.premium-btn-dark:hover {
+  box-shadow: 0 12px 24px -6px rgba(28, 36, 48, 0.35);
+}
+
+/* Magnetic element cursor offset target */
+.magnetic-item {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* 4. Glass Panel glow animations */
+.glass-glow-hover {
+  position: relative;
+}
+.glass-glow-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 25px rgba(72, 199, 243, 0);
+  transition: box-shadow 0.5s ease;
+  pointer-events: none;
+}
+.glass-glow-hover:hover::after {
+  box-shadow: 0 0 25px rgba(72, 199, 243, 0.15);
+}
+
+/* 5. Blur reveal utility class */
+.blur-reveal-target {
+  filter: blur(0px);
+  opacity: 1;
 }

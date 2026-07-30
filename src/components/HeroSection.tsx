@@ -263,7 +263,6 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(#48C7F3_1px,transparent_1px)] [background-size:32px_32px] opacity-5 pointer-events-none z-1" />
 
       {/* 4. Floating glassmorphic panel on top of background */}
-      {/* On mobile, we align items to the bottom (items-end pb-24) to keep the bottle in the center/top visible */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full min-h-screen flex items-end lg:items-center pb-24 lg:pb-0 z-10 relative pointer-events-none">
         <div className="w-full lg:w-1/2 relative z-20 pointer-events-auto">
           <div className="glass-panel p-5 sm:p-8 lg:p-10 rounded-3xl shadow-2xl border border-brand-white/40 w-full min-h-[300px] sm:min-h-[360px] lg:min-h-[400px] relative overflow-hidden flex flex-col justify-center backdrop-blur-md">
@@ -286,14 +285,14 @@ export default function HeroSection() {
               <div className="flex gap-2 sm:gap-3 pt-1">
                 <a
                   href="#nos-saveurs"
-                  className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-green hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] flex items-center gap-1.5 shadow-md shadow-brand-green/15 hover:shadow-brand-green/30 transition-all duration-300 pointer-events-auto"
+                  className="magnetic-btn premium-btn premium-btn-green px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-green text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] flex items-center gap-1.5 shadow-md pointer-events-auto"
                 >
                   Découvrir
                   <ArrowRight size={12} />
                 </a>
                 <a
                   href="#distribution"
-                  className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-white hover:bg-brand-sky/15 text-brand-text border border-brand-sky/40 font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-sm transition-all duration-300 pointer-events-auto"
+                  className="magnetic-btn premium-btn premium-btn-white px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-white text-brand-text border border-brand-sky/40 font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-sm pointer-events-auto"
                 >
                   Distributeur
                 </a>
@@ -316,7 +315,7 @@ export default function HeroSection() {
               <div className="pt-1">
                 <a
                   href="#nos-saveurs"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-hibiscus hover:bg-hibiscus/90 text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
+                  className="magnetic-btn premium-btn premium-btn-hibiscus inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-hibiscus text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md pointer-events-auto"
                 >
                   Déguster l'Hibiscus
                   <ArrowRight size={12} />
@@ -340,7 +339,7 @@ export default function HeroSection() {
               <div className="pt-1">
                 <a
                   href="#nos-saveurs"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-pineapple hover:bg-pineapple/90 text-brand-text font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
+                  className="magnetic-btn premium-btn premium-btn-green inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-pineapple text-brand-text font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md pointer-events-auto"
                 >
                   Savourer l'Ananas
                   <ArrowRight size={12} />
@@ -364,7 +363,7 @@ export default function HeroSection() {
               <div className="pt-1">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-green hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
+                  className="magnetic-btn premium-btn premium-btn-green inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-green text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md pointer-events-auto"
                 >
                   Nous Contacter
                   <ArrowRight size={12} />

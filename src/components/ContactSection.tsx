@@ -194,7 +194,7 @@ export default function ContactSection() {
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-6 text-xs font-semibold uppercase tracking-wider text-brand-green hover:text-brand-green-dark transition-colors duration-300"
+                    className="magnetic-btn premium-btn premium-btn-green mt-6 px-5 py-2.5 rounded-full border border-brand-green/30 text-xs font-semibold uppercase tracking-wider text-brand-green hover:text-brand-green-dark hover:bg-brand-green/5"
                   >
                     Envoyer un autre message
                   </button>
@@ -274,7 +274,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl bg-brand-text hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-xs flex items-center justify-center gap-2 shadow-lg hover:shadow-brand-green/20 transition-all duration-300 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+                    className="magnetic-btn premium-btn premium-btn-dark w-full py-4 rounded-xl bg-brand-text hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>

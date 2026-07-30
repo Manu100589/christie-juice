@@ -36,9 +36,8 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        {/* Brand Logo / Name */}
-        <a href="#accueil" className="flex items-center gap-3 group">
-          {/* We will render a beautifully styled text logo with the brand font to guarantee absolute clarity */}
+        {/* Brand Logo / Name (Magnetic) */}
+        <a href="#accueil" className="magnetic-item flex items-center gap-3 group">
           <div className="flex flex-col">
             <span className="font-serif text-2xl md:text-3xl font-bold tracking-wider text-brand-text group-hover:text-brand-blue transition-colors duration-300">
               CHRISTIE
@@ -49,31 +48,31 @@ export default function Header() {
           </div>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation (Magnetic Links) */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-brand-text/80 hover:text-brand-green transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:height-[2px] after:bg-brand-green after:transition-all after:duration-300 hover:after:w-full"
+              className="magnetic-item text-sm font-medium text-brand-text/80 hover:text-brand-green transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:height-[2px] after:bg-brand-green after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTAs (Premium & Magnetic Buttons) */}
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="#distribution"
-            className="px-5 py-2.5 rounded-full border border-brand-green/30 text-brand-green hover:bg-brand-green hover:text-white transition-all duration-300 text-xs font-semibold uppercase tracking-wider flex items-center gap-2"
+            className="magnetic-btn premium-btn premium-btn-green px-5 py-2.5 rounded-full border border-brand-green/30 text-brand-green hover:bg-brand-green hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-2"
           >
             Devenir distributeur
             <ArrowRight size={14} />
           </a>
           <a
             href="#contact"
-            className="px-5 py-2.5 rounded-full bg-brand-blue text-brand-text hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/20 hover:shadow-brand-blue/35 transition-all duration-300 text-xs font-semibold uppercase tracking-wider flex items-center gap-2"
+            className="magnetic-btn premium-btn premium-btn-blue px-5 py-2.5 rounded-full bg-brand-blue text-brand-text text-xs font-semibold uppercase tracking-wider flex items-center gap-2"
           >
             Nous contacter
             <MessageSquare size={14} />
