@@ -125,40 +125,40 @@ export default function HeroSection() {
       // Block 1 (Intro) starts active. It fades out.
       tl.to('.text-block-1', {
         opacity: 0,
-        y: -40,
+        y: -30,
         pointerEvents: 'none',
         duration: 0.15
       }, 0.15);
 
       // Block 2 (Hibiscus) fades in, then fades out.
       tl.fromTo('.text-block-2',
-        { opacity: 0, y: 40, pointerEvents: 'none' },
+        { opacity: 0, y: 30, pointerEvents: 'none' },
         { opacity: 1, y: 0, pointerEvents: 'auto', duration: 0.15 },
         0.22
       );
       tl.to('.text-block-2', {
         opacity: 0,
-        y: -40,
+        y: -30,
         pointerEvents: 'none',
         duration: 0.15
       }, 0.42);
 
       // Block 3 (Pineapple) fades in, then fades out.
       tl.fromTo('.text-block-3',
-        { opacity: 0, y: 40, pointerEvents: 'none' },
+        { opacity: 0, y: 30, pointerEvents: 'none' },
         { opacity: 1, y: 0, pointerEvents: 'auto', duration: 0.15 },
         0.49
       );
       tl.to('.text-block-3', {
         opacity: 0,
-        y: -40,
+        y: -30,
         pointerEvents: 'none',
         duration: 0.15
       }, 0.69);
 
       // Block 4 (Baobab) fades in and stays.
       tl.fromTo('.text-block-4',
-        { opacity: 0, y: 40, pointerEvents: 'none' },
+        { opacity: 0, y: 30, pointerEvents: 'none' },
         { opacity: 1, y: 0, pointerEvents: 'auto', duration: 0.15 },
         0.76
       );
@@ -263,36 +263,37 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(#48C7F3_1px,transparent_1px)] [background-size:32px_32px] opacity-5 pointer-events-none z-1" />
 
       {/* 4. Floating glassmorphic panel on top of background */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full min-h-screen flex items-center z-10 relative pointer-events-none">
+      {/* On mobile, we align items to the bottom (items-end pb-24) to keep the bottle in the center/top visible */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full min-h-screen flex items-end lg:items-center pb-24 lg:pb-0 z-10 relative pointer-events-none">
         <div className="w-full lg:w-1/2 relative z-20 pointer-events-auto">
-          <div className="glass-panel p-6 sm:p-10 rounded-3xl shadow-2xl border border-brand-white/40 w-full min-h-[360px] sm:min-h-[400px] relative overflow-hidden flex flex-col justify-center backdrop-blur-md">
+          <div className="glass-panel p-5 sm:p-8 lg:p-10 rounded-3xl shadow-2xl border border-brand-white/40 w-full min-h-[300px] sm:min-h-[360px] lg:min-h-[400px] relative overflow-hidden flex flex-col justify-center backdrop-blur-md">
             
             {/* Slide 1: Welcome & Rosée */}
-            <div className="text-block-1 absolute inset-6 sm:inset-10 flex flex-col justify-center space-y-4 pointer-events-auto">
-              <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-brand-sky/40 border border-brand-blue/20 text-brand-text text-[10px] uppercase tracking-[0.2em] font-bold">
+            <div className="text-block-1 absolute inset-5 sm:inset-8 lg:inset-10 flex flex-col justify-center space-y-3 sm:space-y-4 pointer-events-auto">
+              <div className="inline-flex items-center gap-2 self-start px-2.5 py-0.5 sm:py-1 rounded-full bg-brand-sky/40 border border-brand-blue/20 text-brand-text text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold">
                 <Sparkles size={10} className="text-brand-green animate-pulse" />
                 Christie Naturals
               </div>
-              <h1 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
+              <h1 className="font-serif text-2xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
                 La vitalité pure<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green-dark to-brand-blue">
                   du plaisir tropical
                 </span>
               </h1>
-              <p className="text-brand-muted text-sm sm:text-base leading-relaxed">
+              <p className="text-brand-muted text-xs sm:text-base leading-relaxed">
                 Découvrez des jus premium formulés comme de véritables élixirs. Riches en antioxydants et vitamines essentielles. Zéro sucre ajouté, zéro conservateur.
               </p>
-              <div className="flex gap-3 pt-2">
+              <div className="flex gap-2 sm:gap-3 pt-1">
                 <a
                   href="#nos-saveurs"
-                  className="px-5 py-3 rounded-full bg-brand-green hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-[10px] flex items-center gap-1.5 shadow-md shadow-brand-green/15 hover:shadow-brand-green/30 transition-all duration-300 pointer-events-auto"
+                  className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-green hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] flex items-center gap-1.5 shadow-md shadow-brand-green/15 hover:shadow-brand-green/30 transition-all duration-300 pointer-events-auto"
                 >
                   Découvrir
                   <ArrowRight size={12} />
                 </a>
                 <a
                   href="#distribution"
-                  className="px-5 py-3 rounded-full bg-brand-white hover:bg-brand-sky/15 text-brand-text border border-brand-sky/40 font-semibold uppercase tracking-wider text-[10px] shadow-sm transition-all duration-300 pointer-events-auto"
+                  className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-white hover:bg-brand-sky/15 text-brand-text border border-brand-sky/40 font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-sm transition-all duration-300 pointer-events-auto"
                 >
                   Distributeur
                 </a>
@@ -300,22 +301,22 @@ export default function HeroSection() {
             </div>
 
             {/* Slide 2: Hibiscus (Bissap) */}
-            <div className="text-block-2 absolute inset-6 sm:inset-10 flex flex-col justify-center space-y-4 opacity-0 pointer-events-none">
-              <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-hibiscus/10 border border-hibiscus/20 text-hibiscus text-[10px] uppercase tracking-[0.2em] font-bold">
+            <div className="text-block-2 absolute inset-5 sm:inset-8 lg:inset-10 flex flex-col justify-center space-y-3 sm:space-y-4 opacity-0 pointer-events-none">
+              <div className="inline-flex items-center gap-2 self-start px-2.5 py-0.5 sm:py-1 rounded-full bg-hibiscus/10 border border-hibiscus/20 text-hibiscus text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold">
                 <Droplets size={10} className="animate-bounce" />
                 Éclat Botanique
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
                 La passion intense<br />
                 <span className="text-hibiscus">de l'Hibiscus</span>
               </h2>
-              <p className="text-brand-muted text-sm sm:text-base leading-relaxed">
+              <p className="text-brand-muted text-xs sm:text-base leading-relaxed">
                 Notre infusion signature de fleurs d'Hibiscus (Bissap) et grenade. Une fraîcheur acidulée et tonifiante, riche en antioxydants pour vivifier votre corps.
               </p>
-              <div className="pt-2">
+              <div className="pt-1">
                 <a
                   href="#nos-saveurs"
-                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-hibiscus hover:bg-hibiscus/90 text-brand-white font-semibold uppercase tracking-wider text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-hibiscus hover:bg-hibiscus/90 text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
                 >
                   Déguster l'Hibiscus
                   <ArrowRight size={12} />
@@ -324,22 +325,22 @@ export default function HeroSection() {
             </div>
 
             {/* Slide 3: Pineapple */}
-            <div className="text-block-3 absolute inset-6 sm:inset-10 flex flex-col justify-center space-y-4 opacity-0 pointer-events-none">
-              <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-pineapple/10 border border-pineapple/35 text-pineapple text-[10px] uppercase tracking-[0.2em] font-bold">
+            <div className="text-block-3 absolute inset-5 sm:inset-8 lg:inset-10 flex flex-col justify-center space-y-3 sm:space-y-4 opacity-0 pointer-events-none">
+              <div className="inline-flex items-center gap-2 self-start px-2.5 py-0.5 sm:py-1 rounded-full bg-pineapple/10 border border-pineapple/35 text-pineapple text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold">
                 <Leaf size={10} />
                 Douceur Solaire
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
                 La saveur dorée<br />
                 <span className="text-pineapple">de l'Ananas</span>
               </h2>
-              <p className="text-brand-muted text-sm sm:text-base leading-relaxed">
+              <p className="text-brand-muted text-xs sm:text-base leading-relaxed">
                 Un jus pressé d'ananas mûris à point sous le soleil des tropiques. Naturellement riche en bromélaïne pour faciliter la digestion et faire rayonner votre tonus.
               </p>
-              <div className="pt-2">
+              <div className="pt-1">
                 <a
                   href="#nos-saveurs"
-                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-pineapple hover:bg-pineapple/90 text-brand-text font-semibold uppercase tracking-wider text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-pineapple hover:bg-pineapple/90 text-brand-text font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
                 >
                   Savourer l'Ananas
                   <ArrowRight size={12} />
@@ -348,22 +349,22 @@ export default function HeroSection() {
             </div>
 
             {/* Slide 4: Baobab */}
-            <div className="text-block-4 absolute inset-6 sm:inset-10 flex flex-col justify-center space-y-4 opacity-0 pointer-events-none">
-              <div className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-brand-green-dark/10 border border-brand-green-dark/20 text-brand-green-dark text-[10px] uppercase tracking-[0.2em] font-bold">
+            <div className="text-block-4 absolute inset-5 sm:inset-8 lg:inset-10 flex flex-col justify-center space-y-3 sm:space-y-4 opacity-0 pointer-events-none">
+              <div className="inline-flex items-center gap-2 self-start px-2.5 py-0.5 sm:py-1 rounded-full bg-brand-green-dark/10 border border-brand-green-dark/20 text-brand-green-dark text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold">
                 <Award size={10} />
                 Force Ancestrale
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl xl:text-5xl font-bold text-brand-text leading-[1.1] tracking-tight">
                 L'énergie pure<br />
                 <span className="text-brand-green-dark">du Baobab</span>
               </h2>
-              <p className="text-brand-muted text-sm sm:text-base leading-relaxed">
+              <p className="text-brand-muted text-xs sm:text-base leading-relaxed">
                 Le nectar doux et velouté du fruit du Baobab. Un super-aliment naturel exceptionnellement riche en vitamine C, calcium et fibres prébiotiques.
               </p>
-              <div className="pt-2">
+              <div className="pt-1">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-brand-green hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-brand-green hover:bg-brand-green-dark text-brand-white font-semibold uppercase tracking-wider text-[9px] sm:text-[10px] shadow-md transition-all duration-300 pointer-events-auto"
                 >
                   Nous Contacter
                   <ArrowRight size={12} />
@@ -376,7 +377,7 @@ export default function HeroSection() {
       </div>
 
       {/* Floating badge indicator (Bottom Right of screen) */}
-      <div className="absolute right-6 bottom-16 lg:right-12 lg:bottom-16 px-4 py-2 bg-brand-white/80 backdrop-blur-md border border-brand-sky/20 rounded-full shadow-lg z-20 flex items-center gap-2 animate-float-delayed pointer-events-none">
+      <div className="absolute right-4 bottom-6 sm:right-6 sm:bottom-8 lg:right-12 lg:bottom-16 px-4 py-2 bg-brand-white/80 backdrop-blur-md border border-brand-sky/20 rounded-full shadow-lg z-20 flex items-center gap-2 animate-float-delayed pointer-events-none">
         <span className="w-2.5 h-2.5 rounded-full bg-brand-green animate-ping" />
         <span className="text-[10px] font-bold uppercase tracking-wider text-brand-text">Défiler pour infuser</span>
       </div>
