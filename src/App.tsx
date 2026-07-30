@@ -25,24 +25,23 @@ function App() {
     sections.forEach((section) => {
       if (section.id === 'accueil') return;
 
-      // Create a smooth entry/exit animation for scroll and descroll
+      // Animate the section entrance smoothly
+      // Using 'play none none reverse' so that content does NOT disappear when scrolling down,
+      // and only resets to hidden once it has completely left the screen from the bottom (scrolling back up).
       gsap.fromTo(section,
         { 
           opacity: 0, 
-          y: 60,
-          scale: 0.98
+          y: 40,
         },
         {
           opacity: 1,
           y: 0,
-          scale: 1,
           duration: 0.8,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 88%',       // Animates when the top of the section enters the bottom 88% of viewport
-            end: 'bottom 12%',     // Animates out when the bottom of the section leaves the top 12% of viewport
-            toggleActions: 'play reverse play reverse', // Play on enter, reverse on leave, play on enter back, reverse on leave back
+            start: 'top 90%',       // Triggers when the top of the section enters the bottom 90% of the screen
+            toggleActions: 'play none none reverse', // play on enter, do nothing on leave, do nothing on enter back, reverse on leave back
             invalidateOnRefresh: true,
           }
         }
