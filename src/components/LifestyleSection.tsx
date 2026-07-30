@@ -12,42 +12,32 @@ export default function LifestyleSection() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Header reveal
-      gsap.fromTo('.lifestyle-header',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.lifestyle-header',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
+    const isMobile = /mobi|android|iphone|ipad|ipod/i.test(navigator.userAgent);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // Staggered grid cards fade-up
-      if (gridRef.current) {
-        gsap.fromTo(gridRef.current.children,
-          { opacity: 0, y: 50, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1,
-            stagger: 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: gridRef.current,
-              start: 'top 75%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      }
+    if (isMobile || prefersReducedMotion) return;
+
+    const ctx = gsap.context(() => {
+      const row = gridRef.current;
+      if (!row) return;
+
+      // Calculate total width of horizontal elements relative to window width
+      const getScrollWidth = () => {
+        return row.scrollWidth - window.innerWidth + 96; // 96px padding
+      };
+
+      gsap.to(row, {
+        x: () => -getScrollWidth(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: () => `+=${row.scrollWidth}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -59,35 +49,38 @@ export default function LifestyleSection() {
       title: 'Jus de Baobab',
       vibe: 'Douceur & Vitalité',
       desc: 'Partagez un moment d’authenticité et de douceur naturelle, riche en fibres et minéraux essentiels.',
-      accentColor: 'border-baobab/20'
+      accentColor: 'border-baobab/20',
+      glow: 'shadow-baobab/10'
     },
     {
       src: promoPineapple,
       title: 'Jus d’Ananas',
       vibe: 'Énergie & Soleil',
       desc: 'Célébrez la vivacité tropicale et faites le plein d’énergie et de vitamine C sous le soleil.',
-      accentColor: 'border-pineapple/20'
+      accentColor: 'border-pineapple/20',
+      glow: 'shadow-pineapple/10'
     },
     {
       src: promoBissap,
       title: 'Jus de Bissap',
       vibe: 'Caractère & Élégance',
       desc: 'Succombez au raffinement d’une infusion florale intense, rafraîchissante et profondément désaltérante.',
-      accentColor: 'border-hibiscus/20'
+      accentColor: 'border-hibiscus/20',
+      glow: 'shadow-hibiscus/10'
     }
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-24 bg-white relative overflow-hidden flex flex-col justify-center min-h-screen"
     >
+      {/* Decorative Blur Halo */}
       <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-brand-sky/15 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         {/* Section Header */}
-        <div className="lifestyle-header text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+        <div className="lifestyle-header text-center md:text-left max-w-3xl mb-12 md:mb-20 flex flex-col items-center md:items-start">
           <span className="font-sans text-xs uppercase tracking-[0.3em] font-bold text-brand-green mb-3">
             Moments Christie Naturals
           </span>
@@ -96,24 +89,27 @@ export default function LifestyleSection() {
           </h2>
           <div className="w-16 h-[3px] bg-brand-green rounded-full" />
         </div>
+      </div>
 
-        {/* Promo Images Grid */}
+      {/* Horizontal scrolling block container */}
+      {/* On desktop, the gridRef wrapper shifts horizontally */}
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         <div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+          className="flex flex-col md:flex-row gap-8 lg:gap-12 md:flex-nowrap md:w-max relative z-10 w-full"
         >
           {items.map((item, idx) => (
             <div
               key={idx}
-              className={`group flex flex-col rounded-[32px] bg-slate-50/50 border ${item.accentColor} shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-left`}
+              className={`group flex flex-col rounded-[32px] bg-slate-50/50 border ${item.accentColor} shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-left w-full md:w-[360px] lg:w-[420px] shrink-0`}
             >
-              {/* Image Frame */}
-              <div className="relative aspect-[5/4] w-full overflow-hidden">
+              {/* Premium Image Frame with Cinematic Zoom */}
+              <div className="premium-img-container relative aspect-[5/4] w-full overflow-hidden">
                 <img
                   src={item.src}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="premium-img w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
               </div>
@@ -135,7 +131,6 @@ export default function LifestyleSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

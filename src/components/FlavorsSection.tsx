@@ -126,12 +126,13 @@ export default function FlavorsSection() {
 
         {/* Flavors Grid */}
         <div className="flavors-grid grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {flavors.map((flavor) => (
+          {flavors.map((flavor, index) => (
             <div
               key={flavor.id}
-              className="flavor-card group relative rounded-[36px] p-6 lg:p-8 bg-white border border-brand-sky/20 transition-all duration-700 hover:shadow-2xl flex flex-col justify-between overflow-hidden shadow-xl"
+              className="flavor-card group relative rounded-[36px] p-6 lg:p-8 bg-white border border-brand-sky/20 transition-all duration-700 hover:shadow-2xl flex flex-col justify-between overflow-hidden shadow-xl sticky lg:relative"
               style={{
-                boxShadow: `0 20px 40px -15px ${flavor.radialGlow}`
+                boxShadow: `0 20px 40px -15px ${flavor.radialGlow}`,
+                top: `${80 + index * 24}px`
               }}
             >
               {/* Radial light halo behind the bottle */}

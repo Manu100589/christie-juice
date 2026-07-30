@@ -11,18 +11,30 @@ export default function BrandStorySection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Fade in the text block from the left
-      gsap.fromTo('.story-text', 
-        { opacity: 0, x: -50 },
+      // Word-by-word Text Reveal animation
+      gsap.to('.reveal-word', {
+        y: 0,
+        stagger: 0.03,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.text-reveal-container',
+          start: 'top 85%',
+        }
+      });
+
+      // Fade in the editorial paragraphs
+      gsap.fromTo('.story-desc', 
+        { opacity: 0, y: 30 },
         { 
           opacity: 1, 
-          x: 0, 
-          duration: 1, 
-          ease: 'power3.out',
+          y: 0, 
+          duration: 0.8, 
+          stagger: 0.15,
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: '.story-text',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            trigger: '.story-desc',
+            start: 'top 85%',
           }
         }
       );
@@ -35,12 +47,11 @@ export default function BrandStorySection() {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            stagger: 0.2,
+            stagger: 0.15,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: cardsRef.current,
-              start: 'top 75%',
-              toggleActions: 'play none none reverse'
+              start: 'top 80%',
             }
           }
         );
@@ -61,7 +72,7 @@ export default function BrandStorySection() {
     {
       title: 'Fraîcheur',
       desc: 'Une expérience fruitée et désaltérante pensée pour chaque moment de dégustation.',
-      icon: <Flame size={24} className="text-brand-blue" />, // Flame is heat, but refreshing lagon is cool - wait! Let's use Sparkles or Wind or similar for freshness, but Flame represents passion or energy. Let's use Wind or Sparkles for freshness! Wait, let's use a custom wind icon or a simple droplets/refreshing icon. Let's use a nice dynamic icon.
+      icon: <Flame size={24} className="text-brand-blue" />,
       colorClass: 'border-brand-blue/20 hover:bg-brand-blue/5 shadow-brand-blue/5',
       glowColor: 'bg-brand-blue/20'
     },
@@ -87,26 +98,33 @@ export default function BrandStorySection() {
       ref={sectionRef}
       className="py-24 md:py-32 bg-white relative overflow-hidden"
     >
-      {/* Decorative Blur Halos */}
-      <div className="absolute top-[20%] left-[-5%] w-[250px] h-[250px] rounded-full bg-brand-green/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-5%] w-[300px] h-[300px] rounded-full bg-brand-sky/20 blur-3xl pointer-events-none" />
+      {/* Decorative Morphing Blobs */}
+      <div className="morphing-blob-1 absolute top-[20%] left-[-5%] w-[250px] h-[250px] bg-brand-green/5 blur-3xl pointer-events-none z-0" />
+      <div className="morphing-blob-2 absolute bottom-[20%] right-[-5%] w-[300px] h-[300px] bg-brand-sky/20 blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
           
           {/* Left Column: Editorial Copy */}
-          <div className="story-text lg:col-span-5 flex flex-col space-y-6 text-left">
+          <div className="lg:col-span-5 flex flex-col space-y-6 text-left">
             <span className="font-sans text-xs uppercase tracking-[0.3em] font-bold text-brand-green">
               Notre Philosophie
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-text leading-tight">
-              Quand la haute gastronomie rencontre la nutrition fonctionnelle
+            {/* Word-by-word Text Reveal Container */}
+            <h2 className="text-reveal-container font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-text leading-tight">
+              {"Quand la haute gastronomie rencontre la nutrition fonctionnelle".split(' ').map((word, i) => (
+                <span key={i} className="inline-block overflow-hidden mr-1.5 py-0.5">
+                  <span className="reveal-word inline-block transform translate-y-full">
+                    {word}
+                  </span>
+                </span>
+              ))}
             </h2>
             <div className="w-16 h-[3px] bg-brand-green rounded-full" />
-            <p className="text-brand-muted text-base leading-relaxed">
+            <p className="story-desc text-brand-muted text-base leading-relaxed">
               Chez <strong className="text-brand-text font-medium">CHRISTIE NATURALS</strong>, nous croyons qu'une boisson d'exception doit nourrir votre corps autant qu'elle émerveille vos papilles. Notre démarche scientifique et artisanale consiste à extraire le meilleur des terroirs tropicaux pour créer des jus vivants, gorgés de nutriments actifs.
             </p>
-            <p className="text-brand-muted text-base leading-relaxed">
+            <p className="story-desc text-brand-muted text-base leading-relaxed">
               Nous sélectionnons des super-aliments d'exception — le baobab revitalisant, l'ananas enzymatique et l'hibiscus antioxydant — pour composer des recettes bienfaisantes qui accompagnent votre quête d'un mode de vie sain, équilibré et vigoureux.
             </p>
           </div>

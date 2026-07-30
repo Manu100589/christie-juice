@@ -18,9 +18,12 @@ import Footer from './components/Footer';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  // 1. Scroll Progress Bar & Magnetic Hover Effects & Blur Reveals
   useEffect(() => {
-    // A. Native high-performance Scroll Progress listener
+    const isMobile = /mobi|android|iphone|ipad|ipod/i.test(navigator.userAgent);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cleanups: (() => void)[] = [];
+
+    // 1. High-Performance Scroll Progress Indicator
     const handleScroll = () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
@@ -31,20 +34,61 @@ function App() {
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
+    cleanups.push(() => window.removeEventListener('scroll', handleScroll));
 
-    // B. Performance & Low Power Check for micro-interactions
-    const isMobile = /mobi|android|iphone|ipad|ipod/i.test(navigator.userAgent);
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const cleanups: (() => void)[] = [];
-
+    // 2. Custom Cursor with Inertia & Hover States (Desktop Only)
     if (!isMobile && !prefersReducedMotion) {
-      // Dynamic selector for magnetic items
+      const dot = document.getElementById('custom-cursor-dot');
+      const ring = document.getElementById('custom-cursor-ring');
+
+      // Mouse movements
+      const onMouseMove = (e: MouseEvent) => {
+        gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0.08, overwrite: 'auto' });
+        gsap.to(ring, { x: e.clientX, y: e.clientY, duration: 0.28, overwrite: 'auto' });
+      };
+
+      window.addEventListener('mousemove', onMouseMove);
+      cleanups.push(() => window.removeEventListener('mousemove', onMouseMove));
+
+      // Cursor expansion/color morphing on hover
+      const hoverEnter = () => {
+        gsap.to(ring, { 
+          scale: 1.6, 
+          borderColor: '#2F9D45', 
+          backgroundColor: 'rgba(47, 157, 69, 0.06)',
+          duration: 0.3 
+        });
+      };
+      
+      const hoverLeave = () => {
+        gsap.to(ring, { 
+          scale: 1, 
+          borderColor: 'rgba(72, 199, 243, 0.45)', 
+          backgroundColor: 'transparent',
+          duration: 0.3 
+        });
+      };
+
+      // Query luxury hover targets
+      const hoverables = document.querySelectorAll('a, button, .magnetic-item, .flavor-card, .group');
+      hoverables.forEach((el) => {
+        el.addEventListener('mouseenter', hoverEnter);
+        el.addEventListener('mouseleave', hoverLeave);
+        cleanups.push(() => {
+          el.removeEventListener('mouseenter', hoverEnter);
+          el.removeEventListener('mouseleave', hoverLeave);
+        });
+      });
+    }
+
+    // 3. Magnetic Hover Attraction Script
+    if (!isMobile && !prefersReducedMotion) {
       const magneticItems = document.querySelectorAll('.magnetic-item, .magnetic-btn');
 
       magneticItems.forEach((item) => {
         const el = item as HTMLElement;
         
-        const onMouseMove = (e: MouseEvent) => {
+        const onMagneticMove = (e: MouseEvent) => {
           const rect = el.getBoundingClientRect();
           const x = e.clientX - rect.left - rect.width / 2;
           const y = e.clientY - rect.top - rect.height / 2;
@@ -58,7 +102,7 @@ function App() {
           });
         };
 
-        const onMouseLeave = () => {
+        const onMagneticLeave = () => {
           gsap.to(el, {
             x: 0,
             y: 0,
@@ -68,17 +112,17 @@ function App() {
           });
         };
 
-        el.addEventListener('mousemove', onMouseMove);
-        el.addEventListener('mouseleave', onMouseLeave);
+        el.addEventListener('mousemove', onMagneticMove);
+        el.addEventListener('mouseleave', onMagneticLeave);
 
         cleanups.push(() => {
-          el.removeEventListener('mousemove', onMouseMove);
-          el.removeEventListener('mouseleave', onMouseLeave);
+          el.removeEventListener('mousemove', onMagneticMove);
+          el.removeEventListener('mouseleave', onMagneticLeave);
         });
       });
     }
 
-    // C. Scroll-driven Entry reveals (Blur Reveal + Fade + Slide Up)
+    // 4. Scroll-driven Entry reveals (Blur Reveal + Fade + Slide Up)
     const sections = document.querySelectorAll('main > section');
     sections.forEach((section) => {
       if (section.id === 'accueil') return; // Skip Hero (pinned canvas)
@@ -97,8 +141,8 @@ function App() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 88%',       // Triggers when the top of the section enters the bottom 88% of the screen
-            toggleActions: 'play none none reverse', // Play on enter, stay on screen, reverse when scrolling up past bottom
+            start: 'top 88%',
+            toggleActions: 'play none none reverse',
             invalidateOnRefresh: true,
           }
         }
@@ -106,7 +150,6 @@ function App() {
     });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       cleanups.forEach(cb => cb());
     };
   }, []);
@@ -116,6 +159,10 @@ function App() {
       {/* Scroll Progress Bar at the top of the screen */}
       <div id="scroll-progress" className="scroll-progress-bar" />
       
+      {/* Custom Cursor elements (hidden on mobile via CSS hidden lg:block) */}
+      <div id="custom-cursor-dot" className="hidden lg:block" />
+      <div id="custom-cursor-ring" className="hidden lg:block" />
+
       <Header />
       <main>
         <HeroSection />

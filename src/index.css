@@ -193,3 +193,52 @@ body {
   filter: blur(0px);
   opacity: 1;
 }
+
+/* 6. Custom Cursor Styling (Desktop Only) */
+#custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #2F9D45;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+#custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(72, 199, 243, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* 7. Organic Morphing Blobs */
+@keyframes morphing {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.morphing-blob-1 {
+  animation: morphing 10s ease-in-out infinite;
+}
+
+.morphing-blob-2 {
+  animation: morphing 14s ease-in-out infinite alternate;
+}
+
+.morphing-blob-3 {
+  animation: morphing 18s ease-in-out infinite;
+}

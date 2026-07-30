@@ -14,9 +14,10 @@ export default function BannerSection() {
       // Parallax scrolling effect on the image
       if (imageRef.current) {
         gsap.fromTo(imageRef.current,
-          { yPercent: -15 },
+          { yPercent: -15, scale: 1.18 },
           {
             yPercent: 15,
+            scale: 1,
             ease: 'none',
             scrollTrigger: {
               trigger: containerRef.current,
