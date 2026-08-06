@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
-import promoBaobab from '../assets/promo_baobab.jpg';
-import promoPineapple from '../assets/promo_pineapple.jpg';
-import promoBissap from '../assets/promo_bissap.jpg';
-import promoPasteque from '../assets/promo_pasteque.jpg';
+import blogBaobab from '../assets/blog_baobab.png';
+import blogPineapple from '../assets/blog_pineapple.png';
+import blogBissap from '../assets/blog_bissap.png';
+import blogWatermelon from '../assets/blog_watermelon.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +26,7 @@ const BLOG_POSTS: BlogPost[] = [
     category: "Nutrition & Santé",
     date: "28 Juillet 2026",
     readTime: "4 min",
-    image: promoBaobab,
+    image: blogBaobab,
     slug: "#baobab-immunite"
   },
   {
@@ -35,7 +35,7 @@ const BLOG_POSTS: BlogPost[] = [
     category: "Santé Naturelle",
     date: "02 Août 2026",
     readTime: "5 min",
-    image: promoBissap,
+    image: blogBissap,
     slug: "#bissap-tension"
   },
   {
@@ -44,7 +44,7 @@ const BLOG_POSTS: BlogPost[] = [
     category: "Science des Jus",
     date: "04 Août 2026",
     readTime: "3 min",
-    image: promoPineapple,
+    image: blogPineapple,
     slug: "#pressage-a-froid"
   },
   {
@@ -53,7 +53,7 @@ const BLOG_POSTS: BlogPost[] = [
     category: "Détox & Énergie",
     date: "05 Août 2026",
     readTime: "4 min",
-    image: promoPasteque,
+    image: blogWatermelon,
     slug: "#detox-pasteque-gingembre"
   }
 ];
