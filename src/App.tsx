@@ -14,6 +14,7 @@ import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import GlobalBackground from './components/GlobalBackground';
+import BlogSection from './components/BlogSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -174,6 +175,7 @@ function App() {
         <BenefitsSection />
         <ExperienceSection />
         <LifestyleSection />
+        <BlogSection />
         <PartnersSection />
         <FaqSection />
         <ContactSection />
