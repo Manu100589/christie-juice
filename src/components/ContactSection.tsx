@@ -113,7 +113,7 @@ export default function ContactSection() {
               
               {/* WhatsApp direct */}
               <a
-                href="https://wa.me/33600000000"
+                href="https://wa.me/237679191366"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-5 rounded-2xl border border-brand-green/20 bg-brand-green/5 hover:bg-brand-green hover:text-white transition-all duration-300 group"
@@ -126,7 +126,7 @@ export default function ContactSection() {
                     WhatsApp Direct
                   </h4>
                   <p className="text-sm font-medium text-brand-green group-hover:text-brand-white/80">
-                    +33 6 00 00 00 00
+                    +237 679 191 366
                   </p>
                 </div>
               </a>
@@ -151,7 +151,7 @@ export default function ContactSection() {
 
               {/* Phone call */}
               <a
-                href="tel:+3310000000"
+                href="tel:+237679191366"
                 className="flex items-center gap-4 p-5 rounded-2xl border border-brand-sky/30 bg-slate-50 hover:bg-brand-sky/20 transition-all duration-300 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-brand-sky/20 text-brand-text flex items-center justify-center">
@@ -162,7 +162,7 @@ export default function ContactSection() {
                     Téléphone Direct
                   </h4>
                   <p className="text-sm font-medium text-brand-muted">
-                    +33 1 00 00 00 00
+                    +237 679 191 366
                   </p>
                 </div>
               </a>

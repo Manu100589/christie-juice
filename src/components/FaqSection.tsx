@@ -67,7 +67,7 @@ export default function FaqSection() {
     },
     {
       q: 'Comment contacter CHRISTIE NATURALS pour un partenariat ?',
-      a: 'Vous pouvez nous envoyer votre demande via notre formulaire de contact général ou professionnel en bas de page. Vous pouvez également écrire directement à partner@christienaturals.com ou nous joindre sur WhatsApp au +33 6 00 00 00 00 pour un échange direct avec notre équipe commerciale.'
+      a: 'Vous pouvez nous envoyer votre demande via notre formulaire de contact général ou professionnel en bas de page. Vous pouvez également écrire directement à partner@christienaturals.com ou nous joindre sur WhatsApp au +237 679 191 366 pour un échange direct avec notre équipe commerciale.'
     }
   ];
 
