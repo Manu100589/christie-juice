@@ -8,31 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ExperienceSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background color shift transition linked to scroll progress
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        }
-      })
-      .to(bgRef.current, {
-        backgroundColor: '#E6F9FF', // Light Blue Lagon
-        duration: 1
-      })
-      .to(bgRef.current, {
-        backgroundColor: '#FFFDEB', // Light Solaire Yellow (Pineapple)
-        duration: 1
-      })
-      .to(bgRef.current, {
-        backgroundColor: '#FFF0F5', // Light Hibiscus Pink (Bissap)
-        duration: 1
-      });
 
       // Story text reveal with scroll trigger
       gsap.fromTo('.story-header-el',
@@ -81,13 +59,9 @@ export default function ExperienceSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[90vh] flex items-center justify-center py-28 overflow-hidden transition-colors duration-1000"
+      id="experience"
+      className="relative min-h-[90vh] flex items-center justify-center py-28 overflow-hidden bg-transparent"
     >
-      {/* Scroll-animated background wrapper */}
-      <div 
-        ref={bgRef}
-        className="absolute inset-0 bg-[#E6F9FF] transition-colors duration-1000 z-0" 
-      />
 
       {/* Decorative ambient textures */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.4)_0%,transparent_60%)] z-1 pointer-events-none" />

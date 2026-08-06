@@ -75,7 +75,7 @@ export default function FaqSection() {
     <section
       id="faq"
       ref={sectionRef}
-      className="py-24 bg-[#FAFBFD] relative overflow-hidden"
+      className="py-24 bg-transparent relative overflow-hidden"
     >
       <div className="absolute top-[20%] right-[-15%] w-[450px] h-[450px] rounded-full bg-brand-sky/10 blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[-15%] w-[450px] h-[450px] rounded-full bg-brand-green/5 blur-[130px] pointer-events-none" />

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -6,7 +6,6 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import BannerSection from './components/BannerSection';
 import BrandStorySection from './components/BrandStorySection';
-import FlavorsSection from './components/FlavorsSection';
 import BenefitsSection from './components/BenefitsSection';
 import ExperienceSection from './components/ExperienceSection';
 import LifestyleSection from './components/LifestyleSection';
@@ -14,10 +13,13 @@ import PartnersSection from './components/PartnersSection';
 import FaqSection from './components/FaqSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import GlobalBackground from './components/GlobalBackground';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const [activeFlavor, setActiveFlavor] = useState<string>('pineapple');
+
   useEffect(() => {
     const isMobile = /mobi|android|iphone|ipad|ipod/i.test(navigator.userAgent);
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -163,12 +165,12 @@ function App() {
       <div id="custom-cursor-dot" className="hidden lg:block" />
       <div id="custom-cursor-ring" className="hidden lg:block" />
 
+      <GlobalBackground activeFlavor={activeFlavor} />
       <Header />
       <main>
-        <HeroSection />
+        <HeroSection activeFlavor={activeFlavor} setActiveFlavor={setActiveFlavor} />
         <BannerSection />
         <BrandStorySection />
-        <FlavorsSection />
         <BenefitsSection />
         <ExperienceSection />
         <LifestyleSection />

@@ -94,7 +94,7 @@ export default function BenefitsSection() {
     <section
       id="pourquoi-nous-choisir"
       ref={sectionRef}
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-24 bg-transparent relative overflow-hidden"
     >
       {/* Decorative vector background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-brand-sky/5 blur-[120px] pointer-events-none z-0" />

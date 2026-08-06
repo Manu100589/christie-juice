@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import promoBaobab from '../assets/promo_baobab.jpg';
 import promoPineapple from '../assets/promo_pineapple.jpg';
 import promoBissap from '../assets/promo_bissap.jpg';
+import promoGingembre from '../assets/promo_gingembre.jpg';
+import promoPassion from '../assets/promo_passion.jpg';
+import promoPasteque from '../assets/promo_pasteque.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,15 +68,40 @@ export default function LifestyleSection() {
       title: 'Jus de Bissap',
       vibe: 'Caractère & Élégance',
       desc: 'Succombez au raffinement d’une infusion florale intense, rafraîchissante et profondément désaltérante.',
-      accentColor: 'border-hibiscus/20',
-      glow: 'shadow-hibiscus/10'
+      accentColor: 'border-bissap/20',
+      glow: 'shadow-bissap/10'
+    },
+    {
+      src: promoPasteque,
+      title: 'Jus de Pastèque',
+      vibe: 'Hydratation & Légèreté',
+      desc: 'La fraîcheur désaltérante d’une pastèque mûre et gorgée de jus pour hydrater votre corps avec délice.',
+      accentColor: 'border-pasteque/20',
+      glow: 'shadow-pasteque/10'
+    },
+    {
+      src: promoGingembre,
+      title: 'Jus de Gingembre',
+      vibe: 'Piquant & Force',
+      desc: 'Une formule tonique et revigorante de gingembre pressé qui réveille vos sens et booste votre énergie.',
+      accentColor: 'border-gingembre/20',
+      glow: 'shadow-gingembre/10'
+    },
+    {
+      src: promoPassion,
+      title: 'Jus de Fruits Passion',
+      vibe: 'Exotisme & Intensité',
+      desc: 'Une expérience gustative intense et acidulée, riche en antioxydants pour une pause pleine de saveurs.',
+      accentColor: 'border-passion/20',
+      glow: 'shadow-passion/10'
     }
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-white relative overflow-hidden flex flex-col justify-center min-h-screen"
+      id="lifestyle"
+      className="py-24 md:py-32 bg-transparent relative overflow-hidden flex flex-col justify-center min-h-[80vh]"
     >
       {/* Decorative Blur Halo */}
       <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-brand-sky/15 blur-[120px] pointer-events-none" />
@@ -92,16 +120,16 @@ export default function LifestyleSection() {
       </div>
 
       {/* Horizontal scrolling block container */}
-      {/* On desktop, the gridRef wrapper shifts horizontally */}
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+      {/* On desktop, the gridRef wrapper shifts horizontally. On mobile, it allows swipe horizontal scrolling. */}
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 overflow-x-auto md:overflow-x-visible scrollbar-hide">
         <div
           ref={gridRef}
-          className="flex flex-col md:flex-row gap-8 lg:gap-12 md:flex-nowrap md:w-max relative z-10 w-full"
+          className="flex flex-row gap-6 md:gap-8 lg:gap-12 flex-nowrap w-max relative z-10"
         >
           {items.map((item, idx) => (
             <div
               key={idx}
-              className={`group flex flex-col rounded-[32px] bg-slate-50/50 border ${item.accentColor} shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-left w-full md:w-[360px] lg:w-[420px] shrink-0`}
+              className={`group flex flex-col rounded-[32px] bg-slate-50/50 border ${item.accentColor} shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 text-left w-[280px] sm:w-[360px] lg:w-[420px] shrink-0`}
             >
               {/* Premium Image Frame with Cinematic Zoom */}
               <div className="premium-img-container relative aspect-[5/4] w-full overflow-hidden">

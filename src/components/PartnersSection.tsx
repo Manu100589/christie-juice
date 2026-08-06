@@ -84,7 +84,7 @@ export default function PartnersSection() {
     <section
       id="distribution"
       ref={sectionRef}
-      className="py-24 md:py-32 bg-[#FAFBFD] relative overflow-hidden"
+      className="py-24 md:py-32 bg-transparent relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute top-[10%] right-[-10%] w-[350px] h-[350px] rounded-full bg-brand-sky/20 blur-[100px] pointer-events-none" />

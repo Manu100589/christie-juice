@@ -16,7 +16,11 @@
   
   --color-pineapple: #F6C230;
   --color-hibiscus: #C93A6D;
+  --color-bissap: #C93A6D;
   --color-baobab: #D8B08D;
+  --color-pasteque: #E84351;
+  --color-gingembre: #DFB76C;
+  --color-passion: #E28743;
   --color-leaf-light: #88C83E;
   
   --animate-float: float 6s ease-in-out infinite;
@@ -89,6 +93,15 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #1E7A34;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* ==========================================================================

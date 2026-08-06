@@ -102,7 +102,7 @@ export default function FlavorsSection() {
     <section
       id="nos-saveurs"
       ref={sectionRef}
-      className="py-24 md:py-32 bg-gradient-to-b from-slate-50 to-brand-white relative overflow-hidden"
+      className="py-24 md:py-32 bg-transparent relative overflow-hidden"
     >
       {/* Visual background details */}
       <div className="absolute top-[30%] right-[-10%] w-[400px] h-[400px] rounded-full bg-brand-sky/10 blur-[130px] pointer-events-none" />
@@ -167,7 +167,7 @@ export default function FlavorsSection() {
                   <img
                     src={flavor.img}
                     alt={flavor.name}
-                    className="h-full object-contain transform group-hover:scale-110 group-hover:-translate-y-4 group-hover:rotate-3 transition-all duration-700 ease-out drop-shadow-[0_15px_15px_rgba(0,0,0,0.12)]"
+                    className="h-full object-contain transform group-hover:scale-110 group-hover:-translate-y-4 group-hover:rotate-3 transition-all duration-700 ease-out drop-shadow-[0_15px_15px_rgba(0,0,0,0.12)] mix-blend-multiply"
                   />
                   {/* Water splash decorator graphic or light reflection inside card */}
                   <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl pointer-events-none" />

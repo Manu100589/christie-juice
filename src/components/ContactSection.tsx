@@ -76,7 +76,7 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-24 bg-white relative overflow-hidden"
+      className="py-24 bg-transparent relative overflow-hidden"
     >
       {/* Decorative halos */}
       <div className="absolute top-[30%] left-[-10%] w-[350px] h-[350px] rounded-full bg-brand-sky/25 blur-[120px] pointer-events-none" />
